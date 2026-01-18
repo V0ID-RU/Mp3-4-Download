@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MediaDownloader - TikTok & YouTube</title>
+    <meta name="description" content="Téléchargez vos vidéos TikTok et YouTube en MP3 ou MP4 gratuitement avec une qualité premium.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="background-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <main class="container">
+        <header class="header animate-fade-in">
+            <div class="logo">
+                <i class="fa-solid fa-cloud-arrow-down"></i>
+                <span>Media<span>Downloader</span></span>
+            </div>
+            <h1>Transformez n'importe quel lien en média</h1>
+            <p>Supporte YouTube, TikTok et plus encore.</p>
+        </header>
+
+        <section class="downloader-card animate-slide-up">
+            <div class="input-group">
+                <input type="text" id="url-input" placeholder="Collez votre lien ici (YouTube, TikTok...)" autocomplete="off">
+                <button id="fetch-btn">
+                    <span class="btn-text">Extraire</span>
+                    <span class="loader hidden"></span>
+                </button>
+            </div>
+
+            <div id="video-preview" class="video-preview hidden">
+                <div class="preview-content">
+                    <div class="thumbnail-wrapper">
+                        <img id="video-thumbnail" src="" alt="Thumbnail">
+                        <div class="duration" id="video-duration"></div>
+                    </div>
+                    <div class="video-info">
+                        <h2 id="video-title">Titre de la vidéo</h2>
+                        <p id="video-uploader">Nom de la chaîne</p>
+                        
+                        <div class="download-options">
+                            <button class="dl-btn mp4" id="dl-mp4">
+                                <i class="fa-solid fa-video"></i>
+                                <span>MP4 (Vidéo)</span>
+                            </button>
+                            <button class="dl-btn mp3" id="dl-mp3">
+                                <i class="fa-solid fa-music"></i>
+                                <span>MP3 (Audio)</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="error-message" class="error-message hidden">
+                <i class="fa-solid fa-circle-exclamation"></i>
+                <span id="error-text">Une erreur est survenue.</span>
+            </div>
+        </section>
+
+        <section class="features animate-fade-in-delay">
+            <div class="feature">
+                <i class="fa-solid fa-bolt"></i>
+                <h3>Rapide</h3>
+                <p>Téléchargement haute vitesse sans attente.</p>
+            </div>
+            <div class="feature">
+                <i class="fa-solid fa-shield-halved"></i>
+                <h3>Sûr</h3>
+                <p>Aucune publicité intrusive ni virus.</p>
+            </div>
+            <div class="feature">
+                <i class="fa-solid fa-infinity"></i>
+                <h3>Illimité</h3>
+                <p>Téléchargez autant de vidéos que vous le souhaitez.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2024 MediaDownloader. Développé avec passion.</p>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>
