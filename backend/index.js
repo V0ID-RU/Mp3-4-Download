@@ -3,10 +3,24 @@ const cors = require('cors');
 const youtubeDl = require('yt-dlp-exec');
 const ffmpegPath = require('ffmpeg-static');
 const path = require('path');
+require('dotenv').config();
 
 const app = express();
 app.use(cors());
 app.use(express.json());
+
+// Keep-alive logic (every 14 minutes)
+const PING_URL = process.env.PING_URL || `http://localhost:${process.env.PORT || 3001}/api/keep-alive`;
+setInterval(() => {
+    fetch(PING_URL)
+        .then(res => console.log(`[Keep-Alive] Ping success: ${res.status}`))
+        .catch(err => console.error(`[Keep-Alive] Ping failed: ${err.message}`));
+}, 14 * 60 * 1000);
+
+// Keep-alive endpoint
+app.get('/api/keep-alive', (req, res) => {
+    res.status(200).send('Keep-alive active');
+});
 
 // Endpoint to get video information
 app.get('/api/info', async (req, res) => {
